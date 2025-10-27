@@ -1,3 +1,5 @@
+//This is the 7th question of Theory
+
 #include <stdio.h>
 
 int main(void){
