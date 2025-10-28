@@ -7,7 +7,7 @@ int main(void){
 	printf("Enter number: ");
 	scanf("%d",&a);
 	while (a!=0){
-		b=b+a;
+		b+=a;
 		printf("Enter number: ");
 		scanf("%d",&a);
 	}
