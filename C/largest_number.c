@@ -1,4 +1,4 @@
-//This is the 2nd question of the thoery
+//This is the 2nd question of the Theory
 
 #include <stdio.h>
 

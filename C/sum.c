@@ -1,4 +1,4 @@
-//This is the first theory question
+//This is the 1st question of Theory
 
 #include <stdio.h>
 
