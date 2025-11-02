@@ -1,4 +1,4 @@
-//This is the 2st question from 5th ILBP practical
+//This is the 1st question from 5th ILBP practical
 
 #include <stdio.h>
 
