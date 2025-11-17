@@ -8,12 +8,12 @@ int main(void){
 		int user;
 		printf("\nEnter your ATM pin: ");
 		scanf("%d",&user);
-		if (attempt == 3){
-			printf("\nCard Blocked \n");
-			break;
-		}
 		if (user == pin){
 			printf("\nAccess Granted\n");
+			break;
+		}
+		if (attempt == 3){
+			printf("\nCard Blocked \n");
 			break;
 		}
 		else{
