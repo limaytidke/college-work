@@ -1,12 +1,13 @@
+//This is the 2nd question of 6th ILBP practical
+
 #include <stdio.h>
 
 int main(void){
 	int num,sum=0;
-	printf("Enter number: ");
+	printf("\nEnter number: ");
 	scanf("%d",&num);
-	while (num>0){
-		sum+=num;
-		num-=1;
+	for (int i=0;i<=num;i++){
+		sum+=i;
 	}
-	printf("SUM: %d",sum);
+	printf("\nSUM: %d\n",sum);
 }
