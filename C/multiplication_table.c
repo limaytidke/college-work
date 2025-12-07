@@ -3,12 +3,11 @@
 #include <stdio.h>
 
 int main(void){
-	int num,multiple,result;
+	int num,i;
 	printf("\nEnter number: ");
 	scanf("%d",&num);
-	for (multiple =1;multiple<=10;multiple++){
-		result = num * multiple;
-		printf("\n%d x %d = %d",num,multiple,result);
+	for (i =1;i<=10;i++){
+		printf("\n%d x %d = %d",num,i,num*i);
 	}
 	printf("\n");
 }
