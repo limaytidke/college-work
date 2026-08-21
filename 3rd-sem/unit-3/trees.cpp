@@ -84,7 +84,6 @@ int menu() {
          << "2.displayInorder\n"
          << "3.displayBFS\n"
          << "4.displayDFS\n"
-         /*<< "5.deleteAt\n"*/
          << "Enter choice: ";
     cin >> c;
     cout << endl;
