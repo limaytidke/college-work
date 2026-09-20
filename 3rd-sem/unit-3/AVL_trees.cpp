@@ -15,8 +15,10 @@ typedef struct AVL {
           balanceChanged(0) {};
 }* avl;
 
+//makes new node
 avl makeNode(int val) { return new AVL(val); }
 
+//does the name not explain it?
 int calcHeight(avl root) {
     if (!root)
         return 0;
@@ -24,20 +26,23 @@ int calcHeight(avl root) {
         return 1 + max(calcHeight(root->left), calcHeight(root->right));
 }
 
+//i aint gonna explain this
 int calcBalanceFactor(avl root) {
     return calcHeight(root->left) - calcHeight(root->right);
 }
 
+//after rotation need to update balanceFactor again
 void updateBalanceFactor(avl& root) {
     if (!root) return;
     if (root->balanceChanged) root->balanceFactor = calcBalanceFactor(root);
-    root->balanceChanged = 0;
+    root->balanceChanged = 0;       //this parameter determines if the balanceFactor needs to be calculated again avoiding unnecessary function calls 
     if (root->left && root->left->balanceChanged)
         updateBalanceFactor(root->left);
     if (root->right && root->right->balanceChanged)
         updateBalanceFactor(root->right);
 }
 
+//rotates right (WOW)
 avl rightRotate(avl& root) {
     avl p = root->left;
     avl pr = p->right;
@@ -47,6 +52,7 @@ avl rightRotate(avl& root) {
     return p;
 }
 
+//rotates left (OMG)
 avl leftRotate(avl& root) {
     avl p = root->right;
     avl pl = p->left;
@@ -56,6 +62,7 @@ avl leftRotate(avl& root) {
     return p;
 }
 
+//rotation functions
 avl LLrotate(avl& root) { return rightRotate(root); }
 
 avl RRrotate(avl& root) { return leftRotate(root); }
@@ -70,6 +77,7 @@ avl RLrotate(avl& root) {
     return leftRotate(root);
 }
 
+//this checks the balanceFactors and performs appropriate rotations
 avl balance(avl& root) {
     int BL = root->balanceFactor;
     if (BL == 2) {
@@ -87,6 +95,8 @@ avl balance(avl& root) {
     return root;
 }
 
+//god i hate implementing this again and again.
+//inserts the value, checks balance and does corresponding things
 avl insertNode(avl& root, int val) {
     if (!root)
         root = makeNode(val);
@@ -107,6 +117,7 @@ avl insertNode(avl& root, int val) {
     return root;
 }
 
+//inoder traversal (How would one have known)
 void inorder(avl root) {
     if (!root) return;
     inorder(root->left);
@@ -114,6 +125,7 @@ void inorder(avl root) {
     inorder(root->right);
 }
 
+//menu cause why not
 int menu() {
     int choice;
     cout << "1.Insert Node\n"
@@ -134,6 +146,7 @@ int main() {
                 cin >> val;
                 root = insertNode(root, val);
                 break;
+            //deletion will be implemented when I am not feeling lazy
             case 3:
                 inorder(root);
                 cout << "\n";
