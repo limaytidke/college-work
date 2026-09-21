@@ -1,7 +1,7 @@
 #include <iostream>
-#include <queue>
 using namespace std;
 
+//i dont know what even is this
 typedef struct AVL {
     int data;
     int balanceFactor;
